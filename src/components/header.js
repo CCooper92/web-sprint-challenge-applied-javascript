@@ -1,4 +1,30 @@
+//import axios from 'axios';
+const headerContainer = document.querySelector('.header-container');
+
 const Header = (title, date, temp) => {
+  const mainHead = document.createElement('div');
+  const mainDate = document.createElement('span');
+  const mainTitle = document.createElement('h1');
+  const mainTemp = document.createElement('span');
+
+  mainHead.classList.add('header');
+  mainDate.classList.add('date');
+  mainTemp.classList.add('temp');
+
+  mainDate.textContent = date;
+  mainTitle.textContent = title;
+  mainTemp.textContent = temp;
+
+  mainHead.appendChild(mainDate);
+  mainHead.appendChild(mainTitle);
+  mainHead.appendChild(mainTemp);
+
+return mainHead;
+  //console.log(Header);
+
+  
+
+
   // TASK 1
   // ---------------------
   // Implement this function taking `title`, `date` and `temp` as its 3 args and returning the markup below.
@@ -14,6 +40,7 @@ const Header = (title, date, temp) => {
 }
 
 const headerAppender = (selector) => {
+  headerContainer.appendChild(Header('Lambda Times', 'january 6th 2021', '26 Degrees'))
   // TASK 2
   // ---------------------
   // Implement this function taking a css selector as its only argument.

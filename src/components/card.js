@@ -1,4 +1,41 @@
+import axios from 'axios';
+
+const cardsContainer = document.querySelector('.cards-container');
+// Cards.forEach((article) => {
+//     axios.get( `https://lambda-times-api.herokuapp.com/articles` )
+//       .then( ( res ) => {
+//           cardsContainer.appendChild( Card ( res ) );
+//       })
+//       .catch( error  => {
+//         console.log(error);
+//       })
+//     })
+
 const Card = (article) => {
+  const cards = document.createElement('div');
+  const headLine = document.createElement('div');
+  const author = document.createElement('div')
+  const imgContainer = document.createElement('div');
+  const img = document.createElement('img');
+  const name = document.createElement('span');
+
+  cards.classList.add('card');
+  headLine.classList.add('headline');
+  author.classList.add('author');
+  imgContainer.classList.add('img-container');
+  
+  headLine.textContent = headLine;
+  img.setAttribute('src',);
+  name.textContent = `By {authorName}`;
+
+  cards.appendChild(headLine);
+  cards.appendChild(author);
+  cards.appendChild(imgContainer);
+  imgContainer.appendChild(img);
+  cards.appendChild(name);
+
+  return Card;
+
   // TASK 5
   // ---------------------
   // Implement this function, which should return the markup you see below.
@@ -31,3 +68,13 @@ const cardAppender = (selector) => {
 }
 
 export { Card, cardAppender }
+
+// Cards.forEach((article) => {
+//   axios.get( `https://lambda-times-api.herokuapp.com/articles` )
+//     .then( ( res ) => {
+//         cardsContainer.appendChild( Card ( res ) );
+//     })
+//     .catch( error  => {
+//       console.log(error);
+//     })
+//   })
